@@ -1,10 +1,12 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Home from "./containers/Home";
 
 function App() {
   return (
-    <div className="App">
-      <h2>hello</h2>
-    </div>
+    <Switch>
+      <Route path="/" render={() => <Home />} />
+    </Switch>
   );
 }
 
