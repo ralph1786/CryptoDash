@@ -1,0 +1,17 @@
+.video {
+  video {
+    height: 50vh;
+    width: 100vw;
+  }
+
+  .overlay {
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    // top: 0;
+    left: 0;
+    background: #babbbb;
+    z-index: 1;
+    opacity: 0.3;
+  }
+}
