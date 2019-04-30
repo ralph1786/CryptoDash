@@ -6,6 +6,11 @@ const loadCurrencies = listCurrencies => ({
   payload: listCurrencies
 });
 
+export const selectedCurrency = currencyObj => ({
+  type: "SELECTED_CURRENCY",
+  payload: currencyObj
+});
+
 export const allCurrencies = () => {
   return dispatch => {
     return axios
