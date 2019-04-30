@@ -1,11 +1,13 @@
 import React from "react";
 import "./Navbar.scss";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 const Navbar = props => {
   return (
     <div className="navbar">
-      <h3>navbar</h3>
+      <Link to="/">
+        Crypto<span>Dash</span>
+      </Link>
     </div>
   );
 };
