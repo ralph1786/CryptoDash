@@ -6,12 +6,37 @@
   width: 350px;
   height: 175px;
   text-align: center;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+
+  h3 {
+    grid-column: 3/5;
+    font-size: 1.3em;
+  }
+
+  span {
+    grid-column: 2/6;
+    grid-row: 3/4;
+  }
 
   a {
     text-decoration: none;
+    grid-column: 5/7;
+    grid-row: 5/6;
+    cursor: auto;
     button {
-      display: block;
-      margin: 10px auto;
+      padding: 5px;
+      border-radius: 25px;
+      background-color: #007aff;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(65, 168, 253);
+        transform: scale(1.05);
+        transition: all 0.4s ease-in;
+      }
     }
   }
 }
