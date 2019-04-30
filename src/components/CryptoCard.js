@@ -6,10 +6,12 @@ import { selectedCurrency } from "../actions";
 
 const CryptoCard = props => {
   const { currency, price } = props.info;
+
+  const priceInt = parseFloat(price);
   return (
     <div className="cryptoCard">
       <h3>{currency}</h3>
-      <span>${price} USD</span>
+      <span>${priceInt} USD</span>
       <Link to="/dashboard">
         <button onClick={() => props.selectedCurrency(props.info)}>
           Dashboard
