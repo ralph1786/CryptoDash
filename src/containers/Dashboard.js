@@ -4,13 +4,7 @@ import { connect } from "react-redux";
 
 class Dashboard extends Component {
   render() {
-    // console.log(this.props.selectedCurrency);
-    localStorage.setItem(
-      "selectedCurrency",
-      JSON.stringify(this.props.selectedCurrency)
-    );
-    const parsedObj = JSON.parse(localStorage.getItem("selectedCurrency"));
-    console.log(parsedObj);
+    console.log(this.props.selectedCurrency);
     const { currency, price, price_date } = this.props.selectedCurrency;
     return (
       <div>
