@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Merienda|Roboto+Slab|ZCOOL+KuaiLe");
 
-.navbar {
-  background-color: rgb(247, 91, 91);
+@mixin navbarStyle {
+  background: #20002c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #20002c, #cbb4d4);
+  background: linear-gradient(to right, #20002c, #cbb4d4);
   padding: 15px;
 
   a {
@@ -17,4 +19,14 @@
       font-size: 1.4em;
     }
   }
+}
+
+.navbar {
+  @include navbarStyle();
+}
+
+.dash-navbar {
+  @include navbarStyle();
+  position: fixed;
+  width: 100vw;
 }
