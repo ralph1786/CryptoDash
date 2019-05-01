@@ -10,6 +10,13 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  background: white;
+
+  &:hover {
+    background: lighten($color: #000000, $amount: 90);
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+  }
 
   h3 {
     grid-column: 3/5;
