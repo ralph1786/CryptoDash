@@ -1,0 +1,12 @@
+.basic-info {
+  grid-column: 1/3;
+  grid-row: 2/4;
+  place-self: center;
+  font-size: 1.3em;
+
+  img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10%;
+  }
+}
