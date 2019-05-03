@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Merienda|Roboto+Slab|ZCOOL+KuaiLe");
+
+.news-card {
+  -webkit-box-shadow: 10px 10px 35px -13px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 35px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 35px -13px rgba(0, 0, 0, 0.75);
+  margin: 2% 5%;
+  display: grid;
+
+  &:hover {
+    background: rgb(230, 221, 236);
+    transform: scale(1.04);
+    transition: all 0.3s ease-in;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: center;
+    padding: 3px 15px;
+    border-radius: 25px;
+    color: white;
+    background: #007aff;
+    width: 50px;
+    justify-self: end;
+    margin-bottom: 3%;
+    margin-right: 3%;
+  }
+
+  h3,
+  p {
+    font-family: "Roboto Slab", cursive;
+    color: rgb(70, 68, 68);
+    margin: 5px 10px;
+
+    span {
+      font-family: "Merienda", cursive;
+      font-size: 1.1em;
+      text-decoration: underline;
+      margin-right: 1%;
+    }
+  }
+}
