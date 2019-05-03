@@ -5,6 +5,7 @@ import axios from "axios";
 import { secondApiKey } from "../constant";
 import GeneralInfo from "../components/GeneralInfo";
 import SelectMenu from "../components/SelectMenu";
+import NewsContainer from "./NewsContainer";
 import "./Dashboard.scss";
 import {
   LineChart,
@@ -13,8 +14,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  AreaChart,
-  Area,
   BarChart,
   Bar
 } from "recharts";
@@ -23,7 +22,9 @@ class Dashboard extends Component {
   state = {
     chosenCurrency: this.props.selectedCurrency.currency,
     data: null,
-    days: "5"
+    days: "5",
+    start: 0,
+    end: 10
   };
 
   getCurrencyData = () => {
@@ -71,6 +72,31 @@ class Dashboard extends Component {
     );
   };
 
+  nextArticlesHandler = () => {
+    const addStart = this.state.start + 10;
+    const addEnd = this.state.end + 10;
+    this.setState(
+      {
+        start: addStart,
+        end: addEnd
+      },
+      () => console.log(this.state)
+    );
+  };
+
+  prevArticlesHandler = () => {
+    const subtractStart = this.state.start - 10;
+    const subtractEnd = this.state.end - 10;
+
+    this.setState(
+      {
+        start: subtractStart,
+        end: subtractEnd
+      },
+      () => console.log(this.state)
+    );
+  };
+
   render() {
     return (
       <div className="dashboard">
@@ -101,30 +127,6 @@ class Dashboard extends Component {
           </LineChart>
         </div>
         <div className="chart-two">
-          <AreaChart
-            width={800}
-            height={400}
-            data={this.state.data}
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" />
-            <YAxis />
-            <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="close"
-              stroke="#8884d8"
-              fill="#8884d8"
-            />
-          </AreaChart>
-        </div>
-        <div className="chart-three">
           <BarChart
             width={800}
             height={400}
@@ -132,7 +134,7 @@ class Dashboard extends Component {
             margin={{
               top: 5,
               right: 30,
-              left: 20,
+              left: 10,
               bottom: 5
             }}
           >
@@ -142,6 +144,28 @@ class Dashboard extends Component {
             <Tooltip />
             <Bar dataKey="close" fill="#5292f9" />
           </BarChart>
+        </div>
+        <div className="news">
+          <h2>
+            {this.state.start === 0 ? (
+              " "
+            ) : (
+              <i
+                className="fas fa-caret-left"
+                onClick={this.prevArticlesHandler}
+              />
+            )}
+            Latest News
+            {this.state.end === 50 ? (
+              " "
+            ) : (
+              <i
+                className="fas fa-caret-right"
+                onClick={this.nextArticlesHandler}
+              />
+            )}
+          </h2>
+          <NewsContainer info={this.state} />
         </div>
       </div>
     );
