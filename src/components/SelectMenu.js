@@ -20,7 +20,7 @@ const SelectMenu = props => {
 
 const styles = {
   gridColumn: "1/3",
-  gridRow: "4/5",
+  gridRow: "3/4",
   justifySelf: "center",
   marginTop: "5%"
 };
