@@ -1,0 +1,11 @@
+.news-container {
+  display: grid;
+  font-family: "Merienda", cursive;
+  grid-template-columns: 1fr;
+  height: 50vh;
+  grid-gap: 10px;
+  //   margin-left: 10px;
+  margin-right: 10%;
+  overflow: scroll;
+  border: 2px solid purple;
+}
