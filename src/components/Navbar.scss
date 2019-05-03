@@ -5,6 +5,8 @@
   background: -webkit-linear-gradient(to right, #20002c, #cbb4d4);
   background: linear-gradient(to right, #20002c, #cbb4d4);
   padding: 15px;
+  z-index: 2;
+  opacity: 0.75;
 
   a {
     font-size: 1.5em;
