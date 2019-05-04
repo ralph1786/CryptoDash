@@ -1,4 +1,4 @@
-# DaycareManager
+# CryptoDash
 
 Application for individuals interested in keeping tracking the current value of the top crypto currencies on the market. It provides historical data of the price of those crypto currencies (last 30 days).
 
