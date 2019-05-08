@@ -12,8 +12,16 @@ function App() {
         <Route path="/dashboard" render={() => <Dashboard />} />
         <Route path="/" render={() => <Home />} />
       </Switch>
+      <footer style={styling}>
+        Disclaimer: Data is courtesy of CryptoCompare API.
+      </footer>
     </Fragment>
   );
 }
+
+const styling = {
+  textAlign: "center",
+  fontWeight: "300"
+};
 
 export default App;
