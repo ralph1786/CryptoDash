@@ -14,7 +14,8 @@ const currenciesReducer = (state = initialState, action) => {
     case "SELECTED_CURRENCY":
       return {
         ...state,
-        selectedCurrency: action.payload
+        selectedCurrency: action.payload,
+        isModalOpen: false
       };
     case "TOGGLE_MODAL":
       return {
