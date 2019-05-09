@@ -1,6 +1,7 @@
 const initialState = {
   cryptoCurrencies: [],
-  selectedCurrency: {}
+  selectedCurrency: {},
+  isModalOpen: false
 };
 
 const currenciesReducer = (state = initialState, action) => {
@@ -14,6 +15,11 @@ const currenciesReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedCurrency: action.payload
+      };
+    case "TOGGLE_MODAL":
+      return {
+        ...state,
+        isModalOpen: !state.isModalOpen
       };
     default:
       return state;
