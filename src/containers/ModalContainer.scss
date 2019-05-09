@@ -1,0 +1,19 @@
+.modal-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+
+  .cryptoCard {
+    width: 275px;
+    height: 125px;
+    img {
+      width: 65px;
+      height: 65px;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(151, 104, 151);
+      color: white;
+    }
+  }
+}
