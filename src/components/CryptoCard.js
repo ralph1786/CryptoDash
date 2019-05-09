@@ -15,7 +15,7 @@ const CryptoCard = props => {
       onClick={
         props.location.pathname === "/dashboard"
           ? () => props.selectedCurrency(props.info)
-          : ""
+          : () => console.log("hello")
       }
     >
       <h3>{currency}</h3>
