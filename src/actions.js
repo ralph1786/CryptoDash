@@ -6,6 +6,10 @@ const loadCurrencies = listCurrencies => ({
   payload: listCurrencies
 });
 
+export const toggleModal = () => ({
+  type: "TOGGLE_MODAL"
+});
+
 export const selectedCurrency = currencyObj => ({
   type: "SELECTED_CURRENCY",
   payload: currencyObj
