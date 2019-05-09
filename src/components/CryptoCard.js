@@ -7,18 +7,27 @@ import currencyImage from "./currencyImage";
 
 const CryptoCard = props => {
   const { currency, price } = props.info;
-
   const priceInt = parseFloat(price);
+
   return (
-    <div className="cryptoCard">
+    <div
+      className="cryptoCard"
+      onClick={
+        props.location.pathname === "/dashboard"
+          ? () => props.selectedCurrency(props.info)
+          : ""
+      }
+    >
       <h3>{currency}</h3>
       <img src={currencyImage(currency)} alt="currency logo" />
       <span>${priceInt} USD</span>
-      <Link to="/dashboard">
-        <button onClick={() => props.selectedCurrency(props.info)}>
-          Dashboard
-        </button>
-      </Link>
+      {props.location.pathname === "/dashboard" ? null : (
+        <Link to="/dashboard">
+          <button onClick={() => props.selectedCurrency(props.info)}>
+            Dashboard
+          </button>
+        </Link>
+      )}
     </div>
   );
 };
