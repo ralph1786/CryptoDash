@@ -1,6 +1,8 @@
 import React from "react";
 import "./Navbar.scss";
 import { withRouter, Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { toggleModal } from "../actions";
 
 const Navbar = props => {
   return (
@@ -12,8 +14,24 @@ const Navbar = props => {
       <Link to="/">
         Crypto<span>Dash</span>
       </Link>
+      {props.location.pathname === "/dashboard" ? (
+        <span className="currencies" onClick={props.toggleModal}>
+          Currencies
+        </span>
+      ) : null}
     </div>
   );
 };
 
-export default withRouter(Navbar);
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleModal: () => dispatch(toggleModal())
+  };
+};
+
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(Navbar)
+);
