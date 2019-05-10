@@ -3,9 +3,8 @@
 .container {
   display: grid;
   font-family: "Merienda", cursive;
-  grid-template-columns: repeat(3, 1fr);
-  //   grid-template-rows: repeat(3, 1fr);
-  height: 50vh;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  height: 50%;
   grid-gap: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -13,11 +12,17 @@
   background: -webkit-linear-gradient(
     to right,
     #f9faba,
-    #f3ef11
+    #faf62b
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #f9faba,
-    #f3ef11
+    #faf62b
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (max-width: 375px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
