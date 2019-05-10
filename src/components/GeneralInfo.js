@@ -9,7 +9,7 @@ const GeneralInfo = props => {
   return (
     <div className="basic-info">
       <img src={currencyImage(currency)} alt="currency logo" />
-      <h2>Symbol: {currency}</h2>
+      <h2>Currency: {currency}</h2>
       <p>Current Price: {parseFloat(price)}</p>
       <span>Today's Date: {price_date}</span>
     </div>

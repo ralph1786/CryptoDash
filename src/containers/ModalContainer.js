@@ -27,6 +27,7 @@ const ModalContainer = props => {
       onRequestClose={props.toggleModal}
       style={customStyles}
       ariaHideApp={false}
+      closeTimeoutMS={500}
     >
       <div className="modal-container">{arrayCurrencies}</div>
     </Modal>
