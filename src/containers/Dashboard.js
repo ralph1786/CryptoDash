@@ -28,7 +28,6 @@ class Dashboard extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    // console.log(nextProps);
     if (prevState.chosenCurrency !== nextProps.selectedCurrency.currency) {
       return {
         chosenCurrency: nextProps.selectedCurrency.currency
