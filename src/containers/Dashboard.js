@@ -22,7 +22,7 @@ class Dashboard extends Component {
   state = {
     chosenCurrency: this.props.selectedCurrency.currency,
     data: null,
-    days: "5",
+    days: "10",
     start: 0,
     end: 10
   };
@@ -103,11 +103,13 @@ class Dashboard extends Component {
     return (
       <Fragment>
         <div className="dashboard">
-          <GeneralInfo />
-          <SelectMenu
-            value={this.state.days}
-            handleChange={this.changeHandler}
-          />
+          <div className="main-info">
+            <GeneralInfo />
+            <SelectMenu
+              value={this.state.days}
+              handleChange={this.changeHandler}
+            />
+          </div>
           <div className="chart">
             <LineChart
               width={800}

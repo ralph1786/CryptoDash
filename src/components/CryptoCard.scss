@@ -1,3 +1,18 @@
+@keyframes FadeIn {
+  0% {
+    opacity: 0.01;
+    transform: scale(0.1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .cryptoCard {
   -webkit-box-shadow: 10px 10px 46px -8px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 46px -8px rgba(0, 0, 0, 0.75);
@@ -12,6 +27,8 @@
   grid-template-rows: repeat(6, 1fr);
   background: white;
   margin: 20px;
+  animation: FadeIn 2s ease-in;
+  animation-fill-mode: both;
 
   &:hover {
     background: lighten($color: #000000, $amount: 90);
@@ -55,6 +72,12 @@
         transition: all 0.4s ease-in;
       }
     }
+  }
+}
+
+@for $x from 1 through 6 {
+  .cryptoCard:nth-child(#{$x}) {
+    animation-delay: $x * 0.1s;
   }
 }
 
