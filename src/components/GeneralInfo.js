@@ -10,7 +10,7 @@ const GeneralInfo = props => {
     <div className="basic-info">
       <img src={currencyImage(currency)} alt="currency logo" />
       <h2>Currency: {currency}</h2>
-      <p>Current Price: {parseFloat(price)}</p>
+      <p>Current Price: ${parseFloat(price).toFixed(4)}</p>
       <span>Today's Date: {price_date}</span>
     </div>
   );

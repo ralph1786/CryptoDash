@@ -7,8 +7,7 @@ import currencyImage from "./currencyImage";
 
 const CryptoCard = props => {
   const { currency, price } = props.info;
-  const priceInt = parseFloat(price);
-
+  const priceInt = parseFloat(price).toFixed(4);
   return (
     <div
       className="cryptoCard"
