@@ -1,6 +1,6 @@
 # CryptoDash
 
-Application for individuals interested in keeping tracking the current value of the top crypto currencies on the market. It provides historical data of the price of those crypto currencies (last 30 days).
+Application for individuals interested in keeping tracking of the current value of the top crypto currencies on the market. It provides and displays historical price of those crypto currencies (last 30 days).
 
 ## Getting Started
 
@@ -17,9 +17,11 @@ Install latest version of Node.js
 * create-react-app -> React framework for creating user interface
 * Redux -> for state management, 
 * React-Router -> for displaying different routes on a SPA 
-* SASS -> for styling.
+* SASS -> for styling and animations.
 * Redux-Persist -> maintain redux state after page refresh
-* recharts -> library that provides components for different types of charts. http://recharts.org/en-US/
+* recharts -> library that provides components for different types of charts.
+* three.js -> library for rendering 3D objects.
+   http://recharts.org/en-US/
 
 ### Dependencies
     The following dependencies are in addition to the ones create-react-app comes with.
@@ -32,4 +34,5 @@ Install latest version of Node.js
 7. redux-thunk
 8. redux-persist
 9. recharts
+10. three
   
