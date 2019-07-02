@@ -1,6 +1,6 @@
 # CryptoDash
 
-Application for individuals interested in keeping tracking of the current value of the top crypto currencies on the market. It provides and displays historical price of those crypto currencies (last 30 days).
+Application for individuals interested in keeping tracking of the current value of the top crypto currencies on the market. It provides and displays historical price of those crypto currencies (last 30 days). Information is obtained through the use of two external APIs (nomics API, cryptocompare API).
 
 ## Getting Started
 
