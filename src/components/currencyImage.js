@@ -1,7 +1,8 @@
+//Currently not being used
 const currencyImage = symbol => {
   switch (symbol) {
     case "BTC":
-      return "https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png";
+      return "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg";
     case "ETH":
       return "https://d172h4vc197skd.cloudfront.net/images/89/23/89231ba1d7cd720fb5d00106b33bf9db_4031156383d_t.png";
     case "XRP":
