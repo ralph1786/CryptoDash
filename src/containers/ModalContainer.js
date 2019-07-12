@@ -7,6 +7,7 @@ import "./ModalContainer.scss";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { GridLoader } from "react-spinners";
+import ErrorMessage from "../components/ErrorMessage";
 import { css } from "@emotion/core";
 
 const customStyles = {
@@ -66,7 +67,7 @@ const ModalContainer = props => {
                   />
                 </Fragment>
               );
-            if (error) console.log(error);
+            if (error) return <ErrorMessage />;
             console.log(data);
             // const slicedData = data.currencies.slice(0, 6);
             return (

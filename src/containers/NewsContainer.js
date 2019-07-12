@@ -6,6 +6,7 @@ import "./NewsContainer.scss";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { GridLoader } from "react-spinners";
+import ErrorMessage from "../components/ErrorMessage";
 import { css } from "@emotion/core";
 
 const NEWS_QUERY = gql`
@@ -55,7 +56,7 @@ class NewsContainer extends Component {
                 </Fragment>
               );
             }
-            if (error) console.log(error);
+            if (error) return <ErrorMessage />;
             return (
               <Fragment>
                 {data.news

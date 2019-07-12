@@ -7,6 +7,7 @@ import "./CurrencyContainer.scss";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { GridLoader } from "react-spinners";
+import ErrorMessage from "../components/ErrorMessage";
 import { css } from "@emotion/core";
 
 const CURRENCY_QUERY = gql`
@@ -53,7 +54,7 @@ class CurrencyContainer extends Component {
                   />
                 </Fragment>
               );
-            if (error) console.log(error);
+            if (error) return <ErrorMessage />;
             // console.log(data);
             // const slicedData = data.currencies.slice(0, 6);
             return (
