@@ -3,10 +3,10 @@ import "./CryptoCard.scss";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectedCurrency } from "../actions";
-import currencyImage from "./currencyImage";
+// import currencyImage from "./currencyImage";
 
 const CryptoCard = props => {
-  const { currency, price } = props.info;
+  const { currency, price, logo_url, name } = props.info;
   const priceInt = parseFloat(price).toFixed(4);
   return (
     <div
@@ -17,8 +17,10 @@ const CryptoCard = props => {
           : () => console.log("hello")
       }
     >
-      <h3>{currency}</h3>
-      <img src={currencyImage(currency)} alt="currency logo" />
+      <h3>
+        {name} ({currency})
+      </h3>
+      <img src={logo_url} alt="currency logo" />
       <span>${priceInt} USD</span>
       {props.location.pathname === "/dashboard" ? null : (
         <Link to="/dashboard">
