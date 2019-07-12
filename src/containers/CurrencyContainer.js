@@ -14,6 +14,9 @@ const CURRENCY_QUERY = gql`
     currencies {
       currency
       price
+      logo_url
+      name
+      price_date
     }
   }
 `;
@@ -37,7 +40,7 @@ class CurrencyContainer extends Component {
     return (
       <div className="container">
         {/* {listOfCurrencies} */}
-        <Query query={CURRENCY_QUERY}>
+        <Query query={CURRENCY_QUERY} pollInterval={3000}>
           {({ loading, error, data }) => {
             if (loading)
               return (
@@ -51,11 +54,11 @@ class CurrencyContainer extends Component {
                 </Fragment>
               );
             if (error) console.log(error);
-
-            const slicedData = data.currencies.slice(0, 6);
+            // console.log(data);
+            // const slicedData = data.currencies.slice(0, 6);
             return (
               <Fragment>
-                {slicedData.map((currency, index) => (
+                {data.currencies.map((currency, index) => (
                   <CryptoCard key={index} info={currency} />
                 ))}
               </Fragment>
