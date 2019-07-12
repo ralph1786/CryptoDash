@@ -163,7 +163,7 @@ class Dashboard extends Component {
                   onClick={this.prevArticlesHandler}
                 />
               )}
-              Latest News
+              News Feed
               {this.state.end === 50 ? (
                 " "
               ) : (
