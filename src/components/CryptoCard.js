@@ -3,7 +3,6 @@ import "./CryptoCard.scss";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectedCurrency } from "../actions";
-// import currencyImage from "./currencyImage";
 
 class CryptoCard extends Component {
   state = {
@@ -31,7 +30,6 @@ class CryptoCard extends Component {
   render() {
     const { currency, logo_url, name } = this.props.info;
     const priceInt = parseFloat(this.state.price).toFixed(4);
-    // console.log(this.state.priceIncrease);
     return (
       <div
         className="cryptoCard"
@@ -50,7 +48,12 @@ class CryptoCard extends Component {
             this.state.priceIncrease ? { color: "green" } : { color: "red" }
           }
         >
-          ${priceInt} USD
+          ${priceInt} USD{" "}
+          {this.state.priceIncrease ? (
+            <i className="fas fa-caret-up fa-lg" />
+          ) : (
+            <i className="fas fa-caret-down fa-lg" />
+          )}
         </span>
         {this.props.location.pathname === "/dashboard" ? null : (
           <Link to="/dashboard">
