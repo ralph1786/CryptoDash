@@ -41,10 +41,6 @@ const CURRENCIES_QUERY = gql`
 `;
 
 const ModalContainer = props => {
-  // const arrayCurrencies = props.listCurrencies.map((currency, index) => (
-  //   <CryptoCard key={index} info={currency} />
-  // ));
-  // console.log(props.listCurrencies);
   return (
     <Modal
       isOpen={props.isModalOpen}
@@ -68,8 +64,6 @@ const ModalContainer = props => {
                 </Fragment>
               );
             if (error) return <ErrorMessage />;
-            console.log(data);
-            // const slicedData = data.currencies.slice(0, 6);
             return (
               <Fragment>
                 {data.currencies.map((currency, index) => (
