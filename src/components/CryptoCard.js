@@ -67,7 +67,7 @@ class CryptoCard extends Component {
         onClick={
           this.props.location.pathname === "/dashboard"
             ? () => this.props.selectedCurrency(this.props.info)
-            : () => console.log("hello")
+            : null
         }
       >
         <h3>
