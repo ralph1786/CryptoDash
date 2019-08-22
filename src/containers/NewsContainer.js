@@ -1,7 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import NewsCard from "../components/NewsCard";
-// import { secondApiKey } from "../constant";
-// import axios from "axios";
 import "./NewsContainer.scss";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
@@ -22,55 +20,38 @@ const override = css`
   place-self: center;
 `;
 
-class NewsContainer extends Component {
-  // state = {
-  //   articles: []
-  // };
-
-  // componentDidMount() {
-  //   axios
-  //     .get(
-  //       `https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key=${secondApiKey}`
-  //     )
-  //     .then(res => this.setState({ articles: res.data.Data }));
-  // }
-
-  render() {
-    // const listOfArticles = this.state.articles
-    //   .slice(this.props.info.start, this.props.info.end)
-    //   .map(article => <NewsCard info={article} key={article.id} />);
-    return (
-      <div className="news-container">
-        {/* {listOfArticles} */}
-        <Query query={NEWS_QUERY}>
-          {({ loading, error, data }) => {
-            if (loading) {
-              return (
-                <Fragment>
-                  <GridLoader
-                    css={override}
-                    sizeUnit={"px"}
-                    size={20}
-                    color={"#2f80ed"}
-                  />
-                </Fragment>
-              );
-            }
-            if (error) return <ErrorMessage />;
+const NewsContainer = props => {
+  return (
+    <div className="news-container">
+      {/* {listOfArticles} */}
+      <Query query={NEWS_QUERY}>
+        {({ loading, error, data }) => {
+          if (loading) {
             return (
               <Fragment>
-                {data.news
-                  .slice(this.props.info.start, this.props.info.end)
-                  .map(article => (
-                    <NewsCard info={article} key={article.id} />
-                  ))}
+                <GridLoader
+                  css={override}
+                  sizeUnit={"px"}
+                  size={20}
+                  color={"#2f80ed"}
+                />
               </Fragment>
             );
-          }}
-        </Query>
-      </div>
-    );
-  }
-}
+          }
+          if (error) return <ErrorMessage />;
+          return (
+            <Fragment>
+              {data.news
+                .slice(props.info.start, props.info.end)
+                .map((article, index) => (
+                  <NewsCard info={article} key={index} />
+                ))}
+            </Fragment>
+          );
+        }}
+      </Query>
+    </div>
+  );
+};
 
 export default NewsContainer;
