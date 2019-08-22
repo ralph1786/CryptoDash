@@ -1,7 +1,4 @@
 import React, { Component, Fragment } from "react";
-// import { connect } from "react-redux";
-// import { allCurrencies } from "../actions";
-// import { withRouter } from "react-router-dom";
 import CryptoCard from "../components/CryptoCard";
 import "./CurrencyContainer.scss";
 import gql from "graphql-tag";
@@ -30,18 +27,10 @@ const override = css`
 `;
 
 class CurrencyContainer extends Component {
-  // componentDidMount() {
-  //   this.props.allCurrencies();
-  // }
-
   render() {
-    // const listOfCurrencies = this.props.listCurrencies.map(
-    //   (currency, index) => <CryptoCard key={index} info={currency} />
-    // );
     return (
       <div className="container">
-        {/* {listOfCurrencies} */}
-        <Query query={CURRENCY_QUERY} pollInterval={3000}>
+        <Query query={CURRENCY_QUERY} pollInterval={2000}>
           {({ loading, error, data }) => {
             if (loading)
               return (
@@ -55,8 +44,6 @@ class CurrencyContainer extends Component {
                 </Fragment>
               );
             if (error) return <ErrorMessage />;
-            // console.log(data);
-            // const slicedData = data.currencies.slice(0, 6);
             return (
               <Fragment>
                 {data.currencies.map((currency, index) => (
@@ -70,24 +57,5 @@ class CurrencyContainer extends Component {
     );
   }
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     listCurrencies: state.cryptoCurrencies
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     allCurrencies: () => dispatch(allCurrencies())
-//   };
-// };
-
-// export default withRouter(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-//   )(CurrencyContainer)
-// );
 
 export default CurrencyContainer;
