@@ -5,9 +5,10 @@
   font-family: "Merienda", cursive;
   grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   height: 50%;
+  width: 100%;
   grid-gap: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  // margin-left: 10px;
+  // margin-right: 10px;
   background: #56ccf2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
