@@ -39,9 +39,7 @@ class Dashboard extends Component {
   getCurrencyData = () => {
     axios
       .get(
-        `https://min-api.cryptocompare.com/data/histoday?fsym=${
-          this.state.chosenCurrency
-        }&tsym=USD&limit=${this.state.days}&api_key=${secondApiKey}`
+        `https://min-api.cryptocompare.com/data/histoday?fsym=${this.state.chosenCurrency}&tsym=USD&limit=${this.state.days}&api_key=${secondApiKey}`
       )
       .then(res => {
         // This function is to change the time format
