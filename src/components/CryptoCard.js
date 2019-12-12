@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./CryptoCard.scss";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectedCurrency } from "../actions";
 
-class CryptoCard extends Component {
+class CryptoCard extends PureComponent {
   state = {
     price: this.props.info.price,
     priceIncrease: false,
@@ -97,9 +97,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(CryptoCard)
-);
+export default withRouter(connect(null, mapDispatchToProps)(CryptoCard));
